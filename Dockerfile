@@ -13,14 +13,6 @@ COPY . .
 
 RUN go build -o oppethus .
 
-# ------------------------------
-
-FROM alpine:latest
-
-WORKDIR /app
-
-COPY --from=builder /app/oppethus .
-
 EXPOSE 8080
 
 CMD ["./oppethus"]
