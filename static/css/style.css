@@ -72,8 +72,7 @@ main img {
     width: 30%;
 }
 
-main img:hover {
-    cursor: pointer;
+main img.active{
     filter: brightness(75%);
 }
  

@@ -41,6 +41,12 @@
     for (let i = 0; i < imgs.length; i++) {
         imgs[i].addEventListener('click', e => {
             const pollVal = e.target.id;
+            imgs[i].classList.add('active');
+
+            setTimeout(() => {
+                imgs[i].classList.remove('active');
+            }, 200);
+
             fetch('api/count', {
                 method: 'POST',
                 headers: {
