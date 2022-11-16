@@ -60,7 +60,7 @@ main {
     height: 100%;
     padding-top: 7rem;
 }
-main .polls {
+main #polls {
     display: flex;
     justify-content: center;
     gap: 2rem;
