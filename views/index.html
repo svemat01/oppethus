@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll TE</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap"
+            rel="stylesheet"
+    />
+</head>
+
+<body>
+<div class="container">
+    <header>
+        <img src="img/logga.png" alt="Logga" />
+        <div class="text">
+            <h1>Teknikprogrammet</h1>
+            <h2>Informations och Medieteknik</h2>
+        </div>
+    </header>
+
+    <main>
+        <h3>Hur upplevde du besöket idag?</h3>
+        <div id="polls">
+            <img src="/img/pollGron.png" alt="Poll" id="1" />
+            <img src="/img/pollGul.png" alt="Poll" id="0" />
+            <img src="/img/pollRod.png" alt="Poll" id="-1" />
+        </div>
+    </main>
+</div>
+</body>
+<script>
+    const imgs = document.getElementById('polls').getElementsByTagName('img');
+
+    for (let i = 0; i < imgs.length; i++) {
+        imgs[i].addEventListener('click', e => {
+            const pollVal = e.target.id;
+            fetch('api/count', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    value: pollVal,
+                    device: "{{.Device}}",
+                })
+            })
+        });
+    }
+</script>
+
+</html>
