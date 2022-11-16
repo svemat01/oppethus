@@ -1,0 +1,49 @@
+header{
+    margin: 0;
+    background-color: black;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+header h1{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header h1 span{
+    font-size: 0.75em;
+}
+header img{
+    margin: 5px;
+    width: 80px;
+    height: auto;
+    text-align: center;
+}
+
+
+
+body{
+    margin: 0;
+    position: relative;
+}
+
+main h2{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+section#poll{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+}
+
+ img{
+    width:300px;
+    height: auto;
+}
+
+section#poll img:hover{
+    filter: brightness(50%);
+}
